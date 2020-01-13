@@ -146,6 +146,8 @@ T_			EQU 20	; RC X  MA X  MB CC MC X     X  X  Cp Bp Ap Ac Bc Cc
 U_			EQU 21	; MA MC CC MB RC L0 L1 L2    X  Cc Bc Ac Cp Bp Ap X		Like M, but with 3 LEDs
 V_			EQU 22	; Cc X  RC X  MC CC MB MA    X  Ap Ac Bp X  X  Bc Cp
 W_			EQU 23  ; RC MC MB X  CC MA X X      X  Ap Bp Cp X  X  X  X     Tristate gate driver
+X_			EQU 24  ; RC MC MB X  CC MA X X      X  Ap Bp Cp X  X  X  X     Tristate gate driver
+Y_			EQU 25	; X  X  RC X  CC MA MC MB	 X  X  Cp Cc Bp Bc Ap Ac	just swap pinout
 
 
 ;**** **** **** **** ****
@@ -277,6 +279,10 @@ IF ESCNO == W_
 $include (W.inc)        ; Select pinout W
 ENDIF
 
+IF ESCNO == Y_
+$include (Y.inc)        ; Select pinout Y
+ENDIF
+
 IF PWM == 24
 	PWM_BITS				EQU	10		;; 24khz
 	PWM_DELTA_SIGMA_BITS	EQU	1 
@@ -290,9 +296,9 @@ ENDIF
 ;**** **** **** **** ****
 ; Programming defaults
 ;
-DEFAULT_PGM_STARTUP_PWR 				EQU 9 	; 1=0.031 2=0.047 3=0.063 4=0.094 5=0.125 6=0.188	7=0.25  8=0.38  9=0.50  10=0.75 11=1.00 12=1.25 13=1.50
-DEFAULT_PGM_COMM_TIMING				EQU 3 	; 1=Low 		2=MediumLow 	3=Medium 		4=MediumHigh 	5=High
-DEFAULT_PGM_DEMAG_COMP 				EQU 2 	; 1=Disabled	2=Low		3=High
+DEFAULT_PGM_STARTUP_PWR 				EQU 13 	; 1=0.031 2=0.047 3=0.063 4=0.094 5=0.125 6=0.188	7=0.25  8=0.38  9=0.50  10=0.75 11=1.00 12=1.25 13=1.50
+DEFAULT_PGM_COMM_TIMING				EQU 5 	; 1=Low 		2=MediumLow 	3=Medium 		4=MediumHigh 	5=High
+DEFAULT_PGM_DEMAG_COMP 				EQU 3 	; 1=Disabled	2=Low		3=High
 DEFAULT_PGM_DIRECTION				EQU 1 	; 1=Normal 	2=Reversed	3=Bidir		4=Bidir rev
 DEFAULT_PGM_BEEP_STRENGTH			EQU 40	; Beep strength
 DEFAULT_PGM_BEACON_STRENGTH			EQU 80	; Beacon strength
@@ -300,9 +306,9 @@ DEFAULT_PGM_BEACON_DELAY				EQU 4 	; 1=1m		2=2m			3=5m			4=10m		5=Infinite
 
 ; COMMON
 DEFAULT_PGM_ENABLE_TX_PROGRAM 		EQU 1 	; 1=Enabled 	0=Disabled
-DEFAULT_PGM_MIN_THROTTLE				EQU 37	; 4*37+1000=1148
-DEFAULT_PGM_MAX_THROTTLE				EQU 208	; 4*208+1000=1832
-DEFAULT_PGM_CENTER_THROTTLE			EQU 122	; 4*122+1000=1488 (used in bidirectional mode)
+DEFAULT_PGM_MIN_THROTTLE				EQU 0	; 4*0+1000=1000
+DEFAULT_PGM_MAX_THROTTLE				EQU 250	; 4*250+1000=2000
+DEFAULT_PGM_CENTER_THROTTLE			EQU 125	; 4*125+1000=1500h (used in bidirectional mode)
 DEFAULT_PGM_ENABLE_TEMP_PROT	 		EQU 7 	; 0=Disabled	1=80C	2=90C	3=100C	4=110C	5=120C	6=130C	7=140C
 DEFAULT_PGM_ENABLE_POWER_PROT 		EQU 1 	; 1=Enabled 	0=Disabled
 DEFAULT_PGM_BRAKE_ON_STOP	 		EQU 0 	; 1=Enabled 	0=Disabled
@@ -3104,7 +3110,7 @@ beep_apwmfet_off:
 	jnb	ACC.0, beep_cpwmfet_off
 	CpwmFET_off		; CpwmFET off
 beep_cpwmfet_off:
-	mov	A, #150		; 25µs off
+	mov	A, #150		; 25ï¿½s off
 	djnz	ACC, $		
 	djnz	Temp2, beep_onoff
 	; Copy variable
