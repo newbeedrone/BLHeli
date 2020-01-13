@@ -61,6 +61,8 @@ DT_Char1 EQU 0x30+DT_hundreds
 DT_Char2 EQU 0x30+DT_tens
 DT_Char3 EQU 0x30+DT_units
 
+USE_EXTENDED_LAYOUT EQU 0
+
 ; convet ESCNO to a single character, 1 -> 'A', 23 -> 'W'
 ESCNO_ASCII EQU ESCNO + 0x40 ; 'A' is 0x41, less 1 because ESCNO is 1 based
 
