@@ -14,7 +14,7 @@ RMDIR Output
 MKDIR Output
 MKDIR Output\Hex
 SET Revision=REV16_77
-SET KeilPath=d:\SiliconLabs\SimplicityStudio\v4\developer\toolchains\keil_8051\9.53\BIN
+SET KeilPath=C:\SiliconLabs\SimplicityStudio\v4\developer\toolchains\keil_8051\9.53\BIN
 
 @ECHO Revision: %Revision% >> MakeHex_Result.txt
 @ECHO Path for Keil toolchain: %KeilPath% >> MakeHex_Result.txt
@@ -22,118 +22,124 @@ SET KeilPath=d:\SiliconLabs\SimplicityStudio\v4\developer\toolchains\keil_8051\9
 
 SET PWM=24
 
-SET ESCNO=1
-SET ESC=A_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET ESCNO=1
+REM SET ESC=A_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=B_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=B_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=C_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=C_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=D_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=D_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=E_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=E_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=F_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=F_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=G_H_
-SET MCU_48MHZ=1
+REM SET /A ESCNO+=1
+REM SET ESC=G_H_
+REM SET MCU_48MHZ=1
 
-call:compile
-SET /A ESCNO+=1
-SET ESC=H_H_
-SET MCU_48MHZ=1
-call:compile
+REM call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=H_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=I_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=I_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=J_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=J_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=K_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=K_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=L_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=L_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=M_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=M_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=N_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=N_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=O_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=O_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=P_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=P_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=Q_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=Q_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=R_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=R_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=S_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=S_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=T_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=T_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=U_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=U_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=V_H_
-SET MCU_48MHZ=1
-call:compile
+REM SET /A ESCNO+=1
+REM SET ESC=V_H_
+REM SET MCU_48MHZ=1
+REM call:compile
 
-SET /A ESCNO+=1
-SET ESC=W_H_
+REM SET /A ESCNO+=1
+REM SET ESC=W_H_
+REM SET MCU_48MHZ=1
+REM call:compile
+REM SET /A ESCNO+=1
+
+SET /A ESCNO=25
+SET ESC=Y_H_
 SET MCU_48MHZ=1
 call:compile
 SET /A ESCNO+=1
